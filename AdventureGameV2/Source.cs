@@ -25,7 +25,7 @@ namespace AdventureGame
                 gameRunning = EventHandler.ActionOne(player1);
                 if (gameRunning)
                 {
-                    EventHandler.ActionTwo();
+                    EventHandler.ActionTwo(player1);
                 }
             }
 

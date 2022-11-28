@@ -83,11 +83,39 @@ namespace AdventureGame
         }
         #endregion
 
-        internal static void ActionTwo()
+        internal static bool ActionTwo(Player player)
         {
-            Console.WriteLine("ben");
+            Console.WriteLine(player.PrintLocation());
+            Console.WriteLine("What do you want to do at this location?");
+            string input = Console.ReadLine().ToLower();
 
+            switch (input)
+            {
+                case "help":
+                    Help();
+                    break;
+                case "move north":
+                    MoveNorth(player);
+                    break;
+                case "move south":
+                    MoveSouth(player);
+                    break;
+                case "move west":
+                    MoveWest(player);
+                    break;
+                case "move east":
+                    MoveEast(player);
+                    break;
+                case "exit":
+                    return false;
+                default:
+                    Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
+                    Console.ReadLine();
+                    ActionOne(player);
+                    break;
+            }
             Console.ReadLine();
+            return true;
         }
     }
 }
