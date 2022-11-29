@@ -9,19 +9,21 @@ namespace AdventureGameV2
 {
     internal class ItemBase
     {
-        private int _name;
-        private int _weight;
+        //Random to generate properties of items
+        protected Random rnd = new Random();
 
-        public ItemBase(int name, int weight)
-        {
-            _name = name;
-            _weight = weight;   
-        }
+        protected string _name;
+        protected int _weight;
 
-        protected void PrintDetails()
+        public void PrintDetails()
         {
             Console.WriteLine("Name: " + _name);
             Console.WriteLine("Weight: " + _weight);
+        }
+
+        public string GetName()
+        {
+            return _name;
         }
     }
 }

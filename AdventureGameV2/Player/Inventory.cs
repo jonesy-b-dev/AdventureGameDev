@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace AdventureGameV2
 {
-    internal class Inventory
+    internal static class Inventory
     {
-        List<ItemBase> inventory = new List<ItemBase> {};
+        public static List<ItemBase> inventory = new List<ItemBase> { };
+
+        public static void printItems()
+        {
+            foreach (ItemBase item in inventory)
+            {
+                item.PrintDetails();
+            }
+        }
     }
+
 }

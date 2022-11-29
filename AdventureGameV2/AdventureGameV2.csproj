@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandler.cs" />
-    <Compile Include="Inventory.cs" />
-    <Compile Include="ItemBase.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Items\Deer.cs" />
+    <Compile Include="Items\Item Base\ItemGenerator.cs" />
+    <Compile Include="Items\Skunk.cs" />
+    <Compile Include="Player\Inventory.cs" />
+    <Compile Include="Items\Item Base\ItemBase.cs" />
+    <Compile Include="Player\Player.cs" />
     <Compile Include="Source.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

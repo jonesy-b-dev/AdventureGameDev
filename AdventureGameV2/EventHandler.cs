@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AdventureGameV2;
+using AdventureGameV2.Items;
+using AdventureGameV2.Items.Item_Base;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -83,10 +87,8 @@ namespace AdventureGame
         }
         #endregion
 
-
         internal static bool ActionTwo(Player player)
         {
-            Console.WriteLine(player.PrintLocation());
             Console.WriteLine("What do you want to do at this location?");
             string input = Console.ReadLine().ToLower();
 
@@ -118,7 +120,10 @@ namespace AdventureGame
 
         private static void hunt(Player player)
         {
-            Console.WriteLine("You started hunting here and found a ");
+            ItemBase huntItem = ItemGenerator.newHuntItem();
+            Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
+            Inventory.inventory.Add(huntItem);
+            Inventory.printItems();
         }
 
         private static void dig(Player player)
