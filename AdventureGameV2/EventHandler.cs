@@ -83,6 +83,7 @@ namespace AdventureGame
         }
         #endregion
 
+
         internal static bool ActionTwo(Player player)
         {
             Console.WriteLine(player.PrintLocation());
@@ -94,18 +95,15 @@ namespace AdventureGame
                 case "help":
                     Help();
                     break;
-                case "move north":
-                    MoveNorth(player);
+                case "dig":
+                    dig(player);
                     break;
-                case "move south":
-                    MoveSouth(player);
+                case "hunt":
+                    hunt(player);
                     break;
-                case "move west":
-                    MoveWest(player);
-                    break;
-                case "move east":
-                    MoveEast(player);
-                    break;
+                case "nothing":
+                    Console.WriteLine("You did nothing here.");
+                    return false;
                 case "exit":
                     return false;
                 default:
@@ -116,6 +114,16 @@ namespace AdventureGame
             }
             Console.ReadLine();
             return true;
+        }
+
+        private static void hunt(Player player)
+        {
+            Console.WriteLine("You started hunting here and found a ");
+        }
+
+        private static void dig(Player player)
+        {
+            throw new NotImplementedException();
         }
     }
 }
