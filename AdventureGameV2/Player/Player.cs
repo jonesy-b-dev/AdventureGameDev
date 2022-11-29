@@ -29,7 +29,7 @@ namespace AdventureGame
 
         public string PrintLocation()
         {
-            return "Your Position: Vertical: " + _location[0].ToString() + " Horizontal: " + _location[1].ToString();
+            return "your position is now: Vertical: " + _location[0].ToString() + " Horizontal: " + _location[1].ToString();
         }
     }
 }

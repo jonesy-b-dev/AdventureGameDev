@@ -12,9 +12,11 @@ namespace AdventureGameV2
 
         public static void printItems()
         {
+            Console.WriteLine("\n Current items in your inventory:");
             foreach (ItemBase item in inventory)
             {
                 item.PrintDetails();
+                Console.WriteLine();
             }
         }
     }

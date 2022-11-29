@@ -17,55 +17,56 @@ namespace AdventureGame
 
         public static bool ActionOne(Player player)
         {
-            Console.WriteLine("Where do you want to go?");
+            Console.WriteLine("\nWhere do you want to go?");
             string input = Console.ReadLine().ToLower();
+            bool isInputValid = false;
 
             switch (input)
             {
                 case "help":
-                    Help();
+                    Help1(player);
+                    ActionOne(player);
+                    isInputValid = true;
                     break;
                 case "move north":
                     MoveNorth(player);
+                    isInputValid = true;
                     break;
                 case "move south":
                     MoveSouth(player);
+                    isInputValid = true;
                     break;
                 case "move west":
                     MoveWest(player);
+                    isInputValid = true;
                     break;
                 case "move east":
                     MoveEast(player);
+                    isInputValid = true;
+                    break;
+                case "inventory":
+                    ShowInventory();
+                    ActionOne(player);
+                    isInputValid = true;
                     break;
                 case "exit":
+                    isInputValid = true;
                     return false;
                 default: Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    Console.ReadLine();
                     ActionOne(player);
                     break;
             }
 
-            if (input != "help")
+            if (input != "help" && isInputValid)
             {
+                Console.Write("You started to walk and your ");
                 Console.WriteLine(player.PrintLocation());
+                Console.WriteLine("Press enter to continue....");
+                Console.ReadLine();
             }
 
 
-            Console.ReadLine();
             return true;
-        }
-
-
-        private static void Help()
-        {
-            Console.WriteLine("List of action:" +
-                "\nHelp" +
-                "\n*Movement*" +
-                "\nMove North" +
-                "\nMove South" +
-                "\nMove East" +
-                "\nMove West" +
-                "");
         }
 
         private static void MoveNorth(Player player)
@@ -85,7 +86,25 @@ namespace AdventureGame
         {
             player.MoveSideWays(-1);
         }
+        private static void Help1(Player player)
+        {
+            Console.WriteLine("List of action:" +
+                "\nHelp" +
+                "\n*Movement*" +
+                "\nMove North" +
+                "\nMove South" +
+                "\nMove East" +
+                "\nMove West" +
+                "\n*Actions*" +
+                "\nHunt" +
+                "\nDig" +
+                "\nNothing" +
+                "\nExit" +
+                "\n");
+        }
         #endregion
+
+        #region Action 2
 
         internal static bool ActionTwo(Player player)
         {
@@ -95,7 +114,8 @@ namespace AdventureGame
             switch (input)
             {
                 case "help":
-                    Help();
+                    Help2(player);
+                    ActionTwo(player);
                     break;
                 case "dig":
                     dig(player);
@@ -105,13 +125,16 @@ namespace AdventureGame
                     break;
                 case "nothing":
                     Console.WriteLine("You did nothing here.");
-                    return false;
+                    break;
+                case "inventory":
+                    ShowInventory();
+                    ActionTwo(player);
+                    break;
                 case "exit":
                     return false;
                 default:
                     Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    Console.ReadLine();
-                    ActionOne(player);
+                    ActionTwo(player);
                     break;
             }
             Console.ReadLine();
@@ -123,12 +146,40 @@ namespace AdventureGame
             ItemBase huntItem = ItemGenerator.newHuntItem();
             Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
             Inventory.inventory.Add(huntItem);
-            Inventory.printItems();
         }
 
         private static void dig(Player player)
         {
-            throw new NotImplementedException();
+            ItemBase digItem = ItemGenerator.newDigItem();
+            Console.WriteLine("You started digging here and found a " + digItem.GetName());
+            Inventory.inventory.Add(digItem);
         }
+
+        private static void Help2(Player player)
+        {
+            Console.WriteLine("List of action:" +
+                "\nHelp" +
+                "\n*Movement*" +
+                "\nMove North" +
+                "\nMove South" +
+                "\nMove East" +
+                "\nMove West" +
+                "\n*Actions*" +
+                "\nHunt" +
+                "\nDig" +
+                "\nNothing" +
+                "\nExit" +
+                "\n");
+            ActionTwo(player);
+        }
+        #endregion
+
+        #region Alway avalible commands
+
+        private static void ShowInventory()
+        {
+            Inventory.printItems();
+        }
+        #endregion
     }
 }

@@ -25,5 +25,23 @@ namespace AdventureGameV2.Items.Item_Base
                     return null;
             }
         }
+
+        public static ItemBase newDigItem()
+        {
+            Random rnd = new Random();
+            int randomNum = rnd.Next(0, 3);
+
+            switch (randomNum)
+            {
+                case 0:
+                    Stone deer = new Stone();
+                    return deer;
+                case 1:
+                    Chest skunk = new Chest();
+                    return skunk;
+                default:
+                    return null;
+            }
+        }
     }
 }

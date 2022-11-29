@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandler.cs" />
-    <Compile Include="Items\Deer.cs" />
+    <Compile Include="Items\Digging Items\Chest.cs" />
+    <Compile Include="Items\Digging Items\Stone.cs" />
+    <Compile Include="Items\Hunting Items\Deer.cs" />
     <Compile Include="Items\Item Base\ItemGenerator.cs" />
-    <Compile Include="Items\Skunk.cs" />
+    <Compile Include="Items\Hunting Items\Skunk.cs" />
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Items\Item Base\ItemBase.cs" />
     <Compile Include="Player\Player.cs" />
