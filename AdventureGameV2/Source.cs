@@ -12,12 +12,12 @@ namespace AdventureGame
         {
             bool gameRunning = true;
 
-            Console.WriteLine("Welcome to The Forrest!");
+            Console.WriteLine("Welcome to The Fo\rest!");
             Task.Delay(1000).Wait();
             Console.Write("Name your player: ");
             Player player1 = new Player(Console.ReadLine());
 
-            Console.WriteLine("\nYou are in a wide forrest and maybe you can find some stuff around here. if you dont know what to do you can always ask for help \n\nPress Enter to continue....");
+            Console.WriteLine("\nYou are in a wide forest and maybe you can find some stuff around here. if you dont know what to do you can always ask for help by typing \"help\" \n\nPress Enter to continue....");
             Console.ReadLine();
 
             while (gameRunning)

@@ -20,11 +20,19 @@ namespace AdventureGame
         //Movement
         public void MoveUpDown(int input)
         {
+            Console.Write("You started to walk and your ");
             _location[0] += input;
+            Console.WriteLine(PrintLocation());
+            Console.WriteLine("Press enter to continue....");
+            Console.ReadLine();
         }
         public void MoveSideWays(int input)
         {
+            Console.Write("You started to walk and your ");
             _location[1] += input;
+            Console.WriteLine(PrintLocation());
+            Console.WriteLine("Press enter to continue....");
+            Console.ReadLine();
         }
 
         public string PrintLocation()

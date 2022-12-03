@@ -19,53 +19,35 @@ namespace AdventureGame
         {
             Console.WriteLine("\nWhere do you want to go?");
             string input = Console.ReadLine().ToLower();
-            bool isInputValid = false;
 
             switch (input)
             {
                 case "help":
                     Help1(player);
                     ActionOne(player);
-                    isInputValid = true;
                     break;
                 case "move north":
                     MoveNorth(player);
-                    isInputValid = true;
                     break;
                 case "move south":
                     MoveSouth(player);
-                    isInputValid = true;
                     break;
                 case "move west":
                     MoveWest(player);
-                    isInputValid = true;
                     break;
                 case "move east":
                     MoveEast(player);
-                    isInputValid = true;
                     break;
                 case "inventory":
                     ShowInventory();
                     ActionOne(player);
-                    isInputValid = true;
                     break;
                 case "exit":
-                    isInputValid = true;
                     return false;
                 default: Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
                     ActionOne(player);
                     break;
             }
-
-            if (input != "help" && isInputValid)
-            {
-                Console.Write("You started to walk and your ");
-                Console.WriteLine(player.PrintLocation());
-                Console.WriteLine("Press enter to continue....");
-                Console.ReadLine();
-            }
-
-
             return true;
         }
 

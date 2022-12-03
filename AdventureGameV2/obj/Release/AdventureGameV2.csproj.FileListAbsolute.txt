@@ -1,0 +1,8 @@
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\bin\Release\AdventureGameV2.exe.config
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\bin\Release\AdventureGameV2.exe
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\bin\Release\AdventureGameV2.pdb
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\obj\Release\AdventureGameV2.csproj.AssemblyReference.cache
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\obj\Release\AdventureGameV2.csproj.SuggestedBindingRedirects.cache
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\obj\Release\AdventureGameV2.csproj.CoreCompileInputs.cache
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\obj\Release\AdventureGameV2.exe
+D:\Code Projects\C#\AdventureGameDev\AdventureGameV2\obj\Release\AdventureGameV2.pdb
