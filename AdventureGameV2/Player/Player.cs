@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventureGame
+namespace AdventureGameV2
 {
     internal class Player
     {
