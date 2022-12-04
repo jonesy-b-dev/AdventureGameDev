@@ -17,16 +17,17 @@ namespace AdventureGame
             Console.Write("Name your player: ");
             Player player1 = new Player(Console.ReadLine());
 
-            Console.WriteLine("\nYou are in a wide forest and maybe you can find some stuff around here. if you dont know what to do you can always ask for help by typing \"help\" \n\nPress Enter to continue....");
+            Console.WriteLine("\nYou are in a wide forest and maybe you can find some stuff around here. Ff you dont know what to do you can always ask for help by typing \"help\" \n\nPress Enter to continue....");
             Console.ReadLine();
 
+            //Main game loop
             while (gameRunning)
             {
                 Console.Clear();
-                gameRunning = EventHandler.ActionOne(player1);
+                gameRunning = EventHandler.MoveOption(player1);
                 if (gameRunning)
                 {
-                    gameRunning = EventHandler.ActionTwo(player1);
+                    gameRunning = EventHandler.ActionOption(player1);
                 }
             }
 

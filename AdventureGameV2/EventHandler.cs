@@ -15,16 +15,16 @@ namespace AdventureGame
     {
         #region Action 1
 
-        public static bool ActionOne(Player player)
+        public static bool MoveOption(Player player)
         {
-            Console.WriteLine("\nWhere do you want to go?");
+            Console.WriteLine("Where do you want to go?");
             string input = Console.ReadLine().ToLower();
 
             switch (input)
             {
                 case "help":
                     Help1(player);
-                    ActionOne(player);
+                    MoveOption(player);
                     break;
                 case "move north":
                     player.MovePlayer(1,0);
@@ -40,12 +40,12 @@ namespace AdventureGame
                     break;
                 case "inventory":
                     ShowInventory();
-                    ActionOne(player);
+                    MoveOption(player);
                     break;
                 case "exit":
                     return false;
                 default: Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    ActionOne(player);
+                    MoveOption(player);
                     break;
             }
             return true;
@@ -71,7 +71,7 @@ namespace AdventureGame
 
         #region Action 2
 
-        internal static bool ActionTwo(Player player)
+        internal static bool ActionOption(Player player)
         {
             Console.WriteLine("What do you want to do at this location?");
             string input = Console.ReadLine().ToLower();
@@ -80,7 +80,7 @@ namespace AdventureGame
             {
                 case "help":
                     Help2(player);
-                    ActionTwo(player);
+                    ActionOption(player);
                     break;
                 case "dig":
                     dig(player);
@@ -93,13 +93,13 @@ namespace AdventureGame
                     break;
                 case "inventory":
                     ShowInventory();
-                    ActionTwo(player);
+                    ActionOption(player);
                     break;
                 case "exit":
                     return false;
                 default:
                     Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    ActionTwo(player);
+                    ActionOption(player);
                     break;
             }
             Console.ReadLine();
@@ -135,7 +135,7 @@ namespace AdventureGame
                 "\nNothing" +
                 "\nExit" +
                 "\n");
-            ActionTwo(player);
+            ActionOption(player);
         }
         #endregion
 
