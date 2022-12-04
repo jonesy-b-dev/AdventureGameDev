@@ -27,16 +27,16 @@ namespace AdventureGame
                     ActionOne(player);
                     break;
                 case "move north":
-                    MoveNorth(player);
+                    player.MovePlayer(1,0);
                     break;
                 case "move south":
-                    MoveSouth(player);
+                    player.MovePlayer(-1, 0);
                     break;
                 case "move west":
-                    MoveWest(player);
+                    player.MoveSideWays(0,1);
                     break;
                 case "move east":
-                    MoveEast(player);
+                    player.MoveSideWays(0, -1);
                     break;
                 case "inventory":
                     ShowInventory();
@@ -51,23 +51,6 @@ namespace AdventureGame
             return true;
         }
 
-        private static void MoveNorth(Player player)
-        {
-            player.MoveUpDown(1);
-        }
-        private static void MoveSouth(Player player)
-        {
-            player.MoveUpDown(-1);
-        }
-        private static void MoveWest(Player player)
-        {
-            player.MoveSideWays(1);
-        }
-
-        private static void MoveEast(Player player)
-        {
-            player.MoveSideWays(-1);
-        }
         private static void Help1(Player player)
         {
             Console.WriteLine("List of action:" +

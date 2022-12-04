@@ -29,7 +29,8 @@ namespace AdventureGameV2.Items.Item_Base
         public static ItemBase newDigItem()
         {
             Random rnd = new Random();
-            int randomNum = rnd.Next(0, 2);
+            int randomNum = rnd.Next(0, 2ye
+                );
 
             switch (randomNum)
             {
