@@ -12,7 +12,7 @@ namespace AdventureGame
         {
             bool gameRunning = true;
 
-            Console.WriteLine("Welcome to The Fo\rest!");
+            Console.WriteLine("Welcome to The Forest!");
             Task.Delay(1000).Wait();
             Console.Write("Name your player: ");
             Player player1 = new Player(Console.ReadLine());

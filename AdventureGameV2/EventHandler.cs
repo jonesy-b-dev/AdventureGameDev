@@ -33,10 +33,10 @@ namespace AdventureGame
                     player.MovePlayer(-1, 0);
                     break;
                 case "move west":
-                    player.MoveSideWays(0,1);
+                    player.MovePlayer(0,1);
                     break;
                 case "move east":
-                    player.MoveSideWays(0, -1);
+                    player.MovePlayer(0, -1);
                     break;
                 case "inventory":
                     ShowInventory();
