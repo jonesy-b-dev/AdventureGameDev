@@ -25,5 +25,7 @@ namespace AdventureGameV2
         {
             return _name;
         }
+
+        public virtual void Use() { }
     }
 }

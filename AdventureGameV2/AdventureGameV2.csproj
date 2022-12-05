@@ -49,6 +49,8 @@
     <Compile Include="Items\Hunting Items\Deer.cs" />
     <Compile Include="Items\Item Base\ItemGenerator.cs" />
     <Compile Include="Items\Hunting Items\Skunk.cs" />
+    <Compile Include="Items\Special Items\Gold.cs" />
+    <Compile Include="Items\Special Items\Iron.cs" />
     <Compile Include="Player\Inventory.cs" />
     <Compile Include="Items\Item Base\ItemBase.cs" />
     <Compile Include="Player\Player.cs" />

@@ -1,5 +1,4 @@
-﻿using AdventureGameV2;
-using AdventureGameV2.Items;
+﻿using AdventureGameV2.Items;
 using AdventureGameV2.Items.Item_Base;
 using System;
 using System.Collections.Generic;
