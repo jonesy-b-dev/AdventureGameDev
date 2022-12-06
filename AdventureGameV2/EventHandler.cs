@@ -1,12 +1,5 @@
-﻿using AdventureGameV2.Items;
-using AdventureGameV2.Items.Item_Base;
+﻿using AdventureGameV2.Items.Item_Base;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventureGameV2
 {
@@ -18,8 +11,6 @@ namespace AdventureGameV2
         {
             Console.WriteLine("Where do you want to go?");
             string input = InputHandler.FormatInput();
-            
-
             switch (input)
             {
                 case "help":
@@ -27,13 +18,13 @@ namespace AdventureGameV2
                     MoveOption(player);
                     break;
                 case "move north":
-                    player.MovePlayer(1,0);
+                    player.MovePlayer(1, 0);
                     break;
                 case "move south":
                     player.MovePlayer(-1, 0);
                     break;
                 case "move west":
-                    player.MovePlayer(0,1);
+                    player.MovePlayer(0, 1);
                     break;
                 case "move east":
                     player.MovePlayer(0, -1);
@@ -44,14 +35,13 @@ namespace AdventureGameV2
                     break;
                 case "exit":
                     return false;
-                default: Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
+                default:
+                    Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
                     MoveOption(player);
                     break;
             }
             return true;
         }
-
-        
         #endregion
 
         #region Action 2

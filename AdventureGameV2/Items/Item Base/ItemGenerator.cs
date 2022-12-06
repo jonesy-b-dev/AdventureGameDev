@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventureGameV2.Items.Item_Base
 {
     internal static class ItemGenerator
     {
-        public static ItemBase newHuntItem() 
+        public static ItemBase newHuntItem()
         {
             Random rnd = new Random();
             int randomNum = rnd.Next(0, 2);

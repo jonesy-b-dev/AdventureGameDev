@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdventureGameV2
 {
@@ -27,7 +22,7 @@ namespace AdventureGameV2
             Console.WriteLine("Press enter to continue....");
             Console.ReadLine();
         }
-        
+
         public string PrintLocation()
         {
             return "your position is now: Vertical: " + _location[0].ToString() + " Horizontal: " + _location[1].ToString();

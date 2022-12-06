@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace AdventureGameV2.Items
+﻿namespace AdventureGameV2.Items
 {
     internal class Iron : ItemBase
     {
