@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventHandler.cs" />
+    <Compile Include="InputHandler.cs" />
     <Compile Include="Items\Digging Items\Chest.cs" />
     <Compile Include="Items\Digging Items\Stone.cs" />
     <Compile Include="Items\Hunting Items\Deer.cs" />

@@ -19,6 +19,11 @@ namespace AdventureGameV2
                 Console.WriteLine();
             }
         }
+
+        internal static void CheckIfItemIsInInventory(ItemBase itimToSearch)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

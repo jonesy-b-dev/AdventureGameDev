@@ -17,12 +17,13 @@ namespace AdventureGameV2
         public static bool MoveOption(Player player)
         {
             Console.WriteLine("Where do you want to go?");
-            string input = Console.ReadLine().ToLower();
+            string input = InputHandler.FormatInput();
+            
 
             switch (input)
             {
                 case "help":
-                    Help1(player);
+                    Help(player);
                     MoveOption(player);
                     break;
                 case "move north":
@@ -50,22 +51,7 @@ namespace AdventureGameV2
             return true;
         }
 
-        private static void Help1(Player player)
-        {
-            Console.WriteLine("List of action:" +
-                "\nHelp" +
-                "\n*Movement*" +
-                "\nMove North" +
-                "\nMove South" +
-                "\nMove East" +
-                "\nMove West" +
-                "\n*Actions*" +
-                "\nHunt" +
-                "\nDig" +
-                "\nNothing" +
-                "\nExit" +
-                "\n");
-        }
+        
         #endregion
 
         #region Action 2
@@ -78,7 +64,7 @@ namespace AdventureGameV2
             switch (input)
             {
                 case "help":
-                    Help2(player);
+                    Help(player);
                     ActionOption(player);
                     break;
                 case "dig":
@@ -101,7 +87,6 @@ namespace AdventureGameV2
                     ActionOption(player);
                     break;
             }
-            Console.ReadLine();
             return true;
         }
 
@@ -118,8 +103,11 @@ namespace AdventureGameV2
             Console.WriteLine("You started digging here and found a " + digItem.GetName());
             Inventory.inventory.Add(digItem);
         }
+        #endregion
 
-        private static void Help2(Player player)
+        #region Alway avalible commands
+
+        private static void Help(Player player)
         {
             Console.WriteLine("List of action:" +
                 "\nHelp" +
@@ -134,12 +122,7 @@ namespace AdventureGameV2
                 "\nNothing" +
                 "\nExit" +
                 "\n");
-            ActionOption(player);
         }
-        #endregion
-
-        #region Alway avalible commands
-
         private static void ShowInventory()
         {
             Inventory.printItems();
