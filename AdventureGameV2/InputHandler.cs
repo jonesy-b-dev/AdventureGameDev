@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AdventureGameV2
 {
@@ -10,7 +11,7 @@ namespace AdventureGameV2
         {
             string input = Console.ReadLine().ToLower();
             
-            //makeArray(input);
+            makeArray(input);
 
 
             return input;
@@ -19,15 +20,14 @@ namespace AdventureGameV2
 
         private static void makeArray(string input)
         {
+
+            input = string.Join(" ", input.Split(new char[] { ' '}, StringSplitOptions.RemoveEmptyEntries));
             inputArr = input.Split(' ');
 
             int arrIndex = 0;
+
             foreach (string word in inputArr)
             {
-                if (word.Contains(" "))
-                {
-                    Console.WriteLine("space found");
-                }
                 Console.WriteLine(word);
 
                 arrIndex++;
