@@ -10,11 +10,12 @@ namespace AdventureGameV2
         public static bool MoveOption(Player player)
         {
             Console.WriteLine("Where do you want to go?");
-            string input = InputHandler.FormatInput();
+            InputHandler.getInput();
+            
             switch (input)
             {
                 case "help":
-                    Help(player);
+                    Help();
                     MoveOption(player);
                     break;
                 case "move north":
@@ -54,7 +55,7 @@ namespace AdventureGameV2
             switch (input)
             {
                 case "help":
-                    Help(player);
+                    Help();
                     ActionOption(player);
                     break;
                 case "dig":
@@ -97,7 +98,7 @@ namespace AdventureGameV2
 
         #region Alway avalible commands
 
-        private static void Help(Player player)
+        internal static void Help()
         {
             Console.WriteLine("List of action:" +
                 "\nHelp" +
