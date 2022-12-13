@@ -101,7 +101,16 @@ namespace AdventureGameV2
 
         private static void Use()
         {
-            throw new NotImplementedException();
+            switch (inputArr[1])
+            {
+                case "chest":
+                    if (Inventory.inventory.Contains(Chest)
+                    {
+
+                    }
+                default:
+                    break;
+            }
         }
 
     }
