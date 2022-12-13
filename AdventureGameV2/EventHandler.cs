@@ -5,33 +5,20 @@ namespace AdventureGameV2
 {
     internal static class EventHandler
     {
-        #region Action 2
 
-        internal static bool ActionOption(Player player)
-        {
-            Console.WriteLine("What do you want to do at this location?");
-            string input = Console.ReadLine().ToLower();
-
-            
-            return true;
-        }
-
-        internal static void Hunt(Player player)
+        internal static void Hunt()
         {
             ItemBase huntItem = ItemGenerator.newHuntItem();
             Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
             Inventory.inventory.Add(huntItem);
         }
 
-        internal static void Dig(Player player)
+        internal static void Dig()
         {
             ItemBase digItem = ItemGenerator.newDigItem();
             Console.WriteLine("You started digging here and found a " + digItem.GetName());
             Inventory.inventory.Add(digItem);
         }
-        #endregion
-
-        #region Alway avalible commands
 
         internal static void Help()
         {
@@ -49,10 +36,5 @@ namespace AdventureGameV2
                 "\nExit" +
                 "\n");
         }
-        private static void ShowInventory()
-        {
-            Inventory.PrintItems();
-        }
-        #endregion
     }
 }

@@ -15,6 +15,8 @@ namespace AdventureGameV2
                 item.PrintDetails();
                 Console.WriteLine();
             }
+            Console.Write("Press enter to continue...");
+            Console.ReadKey();
         }
 
         internal static void CheckIfItemIsInInventory(ItemBase itimToSearch)

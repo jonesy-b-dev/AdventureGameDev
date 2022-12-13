@@ -51,26 +51,31 @@ namespace AdventureGameV2
                     break;
                 case "help":
                     EventHandler.Help();
-                    GetInput();
+                    break;
+                case "dig":
+                    EventHandler.Dig();
+                    break;
+                case "hunt":
+                    EventHandler.Hunt();
                     break;
                 case "inventory":
                     Inventory.PrintItems();
-                    GetInput();
                     break;
                 case "exit":
                     Console.WriteLine("Thanks for playing!");
-                    Console.ReadLine();
+                    Console.ReadKey();
                     Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    GetInput();
+                    Console.ReadLine();
                     break;
             }
         }
 
         private static void Move()
         {
+
             //We know its a move action now so all move actions are here
             switch (inputArr[1])
             {
@@ -88,7 +93,8 @@ namespace AdventureGameV2
                     break;
                 default:
                     Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
-                    GetInput();
+                    Console.Write("Press enter to continue...");
+                    Console.ReadLine();
                     break;
             }
         }

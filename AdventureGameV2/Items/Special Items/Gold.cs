@@ -6,6 +6,6 @@
         {
             _name = "Gold";
             _weight = rnd.Next(15, 30);
-        }
+        }   
     }
 }
