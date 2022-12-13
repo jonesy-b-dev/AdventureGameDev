@@ -1,70 +1,102 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AdventureGameV2
 {
+    //This class askes for input and calls the appropiate functions for it
     internal class InputHandler
     {
         static string[] inputArr;
         static string input;
-        static bool validInput;
+        static Player _player;
 
-
-        internal static bool getInput()
+        internal static void SetPlayer(Player player1)
         {
-            input = Console.ReadLine().ToLower();
-
-            makeArray();
-
-            if (indentifyFirstWord() && indentifySecondWord())
-            {
-                return true;
-            }
-            else return false;
+            _player = player1;
         }
 
+        internal static void GetInput()
+        {
+            Console.Clear();
+            Console.WriteLine("What do you want to do");
 
-        private static void makeArray()
+            input = Console.ReadLine().ToLower();
+
+            MakeArray();
+
+            //Fuction indentifies the first word and calls functions to indentify and handle the possible second word
+            IndentifyFirstWord();
+            GetInput();
+            
+        }
+
+        private static void MakeArray()
         {
             input = string.Join(" ", input.Split(new char[] { ' '}, StringSplitOptions.RemoveEmptyEntries));
             inputArr = input.Split(' ');
         }
         
-        private static bool indentifyFirstWord()
+        private static void IndentifyFirstWord()
         {
             switch (inputArr[0])
             {
                 case "move":
                     Move();
-                    return true;
+                    break;
                 case "use":
                     Use();
-                    return true;
+                    break;
                 case "help":
                     EventHandler.Help();
-                    return true;
+                    GetInput();
+                    break;
                 case "inventory":
-                    Inventory.printItems();
-                    return true;
+                    Inventory.PrintItems();
+                    GetInput();
+                    break;
+                case "exit":
+                    Console.WriteLine("Thanks for playing!");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                    break;
                 default:
-                    return false;
+                    Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
+                    GetInput();
+                    break;
             }
-        }
-
-        private static bool indentifySecondWord()
-        {
-            throw new NotImplementedException();
         }
 
         private static void Move()
         {
-            throw new NotImplementedException();
+            //We know its a move action now so all move actions are here
+            switch (inputArr[1])
+            {
+                case "north":
+                    _player.MovePlayer(1, 0);
+                    break;
+                case "south":
+                    _player.MovePlayer(-1, 0);
+                    break;
+                case "west":
+                    _player.MovePlayer(0, -1);
+                    break;
+                case "east":
+                    _player.MovePlayer(0, 1);
+                    break;
+                default:
+                    Console.WriteLine("That is no valid input. Please try again or type help for a list of avalible commands.");
+                    GetInput();
+                    break;
+            }
         }
 
         private static void Use()
         {
             throw new NotImplementedException();
         }
+
     }
 }

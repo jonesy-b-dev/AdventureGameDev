@@ -7,8 +7,6 @@ namespace AdventureGameV2
     {
         static void Main(string[] args)
         {
-            bool gameRunning = true;
-
             Console.WriteLine("Welcome to The Forest!");
             Console.Write("Name your player: ");
             Player player1 = new Player(Console.ReadLine());
@@ -19,22 +17,10 @@ namespace AdventureGameV2
             Console.WriteLine("\nYou are in a wide forest and maybe you can find some stuff around here. Ff you dont know what to do you can always ask for help by typing \"help\" \n\nPress Enter to continue....");
             Console.ReadLine();
 
-            //Main game loop
-            while (gameRunning)
-            {
-                Console.Clear();
-                gameRunning = EventHandler.MoveOption(player1);
+            InputHandler.SetPlayer(player1);
 
-                if (gameRunning)
-                {
-                    gameRunning = EventHandler.ActionOption(player1);
-                    Console.ReadLine();
-                }
-            }
-
-            Console.WriteLine("Thanks for playing!");
-
-            Console.ReadLine();
+            //Start first game round
+            InputHandler.GetInput();
         }
     }
 }
