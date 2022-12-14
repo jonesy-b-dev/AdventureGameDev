@@ -106,7 +106,7 @@ namespace AdventureGameV2
                 case "chest":
                     if (Inventory.inventory.Contains(Chest)
                     {
-
+            
                     }
                 default:
                     break;

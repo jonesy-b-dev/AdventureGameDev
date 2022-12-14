@@ -11,6 +11,8 @@ namespace AdventureGameV2
             ItemBase huntItem = ItemGenerator.newHuntItem();
             Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
             Inventory.inventory.Add(huntItem);
+            Console.ReadLine();
+
         }
 
         internal static void Dig()
@@ -18,6 +20,8 @@ namespace AdventureGameV2
             ItemBase digItem = ItemGenerator.newDigItem();
             Console.WriteLine("You started digging here and found a " + digItem.GetName());
             Inventory.inventory.Add(digItem);
+            Console.ReadLine();
+
         }
 
         internal static void Help()
@@ -35,6 +39,9 @@ namespace AdventureGameV2
                 "\nNothing" +
                 "\nExit" +
                 "\n");
+
+
+            Console.ReadLine();
         }
     }
 }
