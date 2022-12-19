@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using AdventureGameV2.Items;
+using Microsoft.Win32;
 using System;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -103,11 +104,14 @@ namespace AdventureGameV2
         {
             switch (inputArr[1])
             {
-                case "chest":
-                    if (Inventory.inventory.Contains(Chest)
+                case "Chest":
+                    if (Inventory.strgInventory.Contains("Chest"))
                     {
-            
+                        Chest chest = new Chest();
+                        Inventory.inventory[Inventory.inventory.FindIndex(chest)].Use();
+                        break;
                     }
+                    else break;
                 default:
                     break;
             }

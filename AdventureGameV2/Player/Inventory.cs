@@ -6,6 +6,7 @@ namespace AdventureGameV2
     internal static class Inventory
     {
         public static List<ItemBase> inventory = new List<ItemBase> { };
+        public static List<string> strgInventory = new List<string> { };
 
         public static void PrintItems()
         {
@@ -19,9 +20,10 @@ namespace AdventureGameV2
             Console.ReadKey();
         }
 
-        internal static void CheckIfItemIsInInventory(ItemBase itimToSearch)
+        public static void AddToInventory(ItemBase item, string name)
         {
-            throw new NotImplementedException();
+            inventory.Add(item);
+            strgInventory.Add(name);
         }
     }
 

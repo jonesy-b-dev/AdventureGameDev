@@ -4,7 +4,7 @@ namespace AdventureGameV2.Items.Item_Base
 {
     internal static class ItemGenerator
     {
-        public static ItemBase newHuntItem()
+        public static ItemBase NewHuntItem()
         {
             Random rnd = new Random();
             int randomNum = rnd.Next(0, 2);
@@ -22,7 +22,7 @@ namespace AdventureGameV2.Items.Item_Base
             }
         }
 
-        public static ItemBase newDigItem()
+        public static ItemBase NewDigItem()
         {
             Random rnd = new Random();
             int randomNum = rnd.Next(0, 2);
@@ -30,11 +30,11 @@ namespace AdventureGameV2.Items.Item_Base
             switch (randomNum)
             {
                 case 0:
-                    Stone deer = new Stone();
-                    return deer;
+                    Chest chest = new Chest();
+                    return chest;
                 case 1:
-                    Chest skunk = new Chest();
-                    return skunk;
+                    Stone stone = new Stone();
+                    return stone;
                 default:
                     return null;
             }

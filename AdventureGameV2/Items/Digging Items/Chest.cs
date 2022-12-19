@@ -19,12 +19,12 @@ namespace AdventureGameV2.Items
                 case 0:
                     Console.WriteLine("You found a iron bar!");
                     Iron iron = new Iron();
-                    Inventory.inventory.Add(iron);
+                    Inventory.AddToInventory(iron, iron.GetName());
                     break;
                 case 1:
                     Console.WriteLine("You found a gold bar!");
                     Gold gold = new Gold();
-                    Inventory.inventory.Add(gold);
+                    Inventory.AddToInventory(gold, gold.GetName());
                     break;
                 default:
                     throw new Exception("Invalid number generated in random");

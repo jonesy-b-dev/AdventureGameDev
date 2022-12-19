@@ -8,18 +8,18 @@ namespace AdventureGameV2
 
         internal static void Hunt()
         {
-            ItemBase huntItem = ItemGenerator.newHuntItem();
+            ItemBase huntItem = ItemGenerator.NewHuntItem();
             Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
-            Inventory.inventory.Add(huntItem);
+            Inventory.AddToInventory(huntItem, huntItem.GetName());
             Console.ReadLine();
 
         }
 
         internal static void Dig()
         {
-            ItemBase digItem = ItemGenerator.newDigItem();
+            ItemBase digItem = ItemGenerator.NewDigItem();
             Console.WriteLine("You started digging here and found a " + digItem.GetName());
-            Inventory.inventory.Add(digItem);
+            Inventory.AddToInventory(digItem, digItem.GetName());
             Console.ReadLine();
 
         }
