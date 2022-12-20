@@ -104,17 +104,32 @@ namespace AdventureGameV2
         {
             switch (inputArr[1])
             {
-                case "Chest":
-                    if (Inventory.strgInventory.Contains("Chest"))
+                case "chest":
+
+                    foreach (ItemBase item in Inventory.inventory)
                     {
-                        Chest chest = new Chest();
-                        Inventory.inventory[Inventory.inventory.FindIndex(chest)].Use();
-                        break;
+                        if (item.GetName() == "Chest")
+                        {
+                            item.Use();
+
+                            Console.ReadLine();
+
+                            Inventory.inventory.Remove(item);
+                            return;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You dont have a chest.");
+                        }
                     }
-                    else break;
+                        break;
                 default:
+                    Console.WriteLine("You cant use that item.");
                     break;
             }
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
+
         }
 
     }

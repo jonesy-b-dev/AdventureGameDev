@@ -29,6 +29,7 @@ namespace AdventureGameV2.Items
                 default:
                     throw new Exception("Invalid number generated in random");
             }
+            Console.WriteLine("Press enter to continue...");
         }
     }
 }

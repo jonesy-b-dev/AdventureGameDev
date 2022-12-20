@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdventureGameV2.Items.Item_Base
+namespace AdventureGameV2.Items
 {
     internal static class ItemGenerator
     {

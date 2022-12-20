@@ -1,4 +1,4 @@
-﻿using AdventureGameV2.Items.Item_Base;
+﻿using AdventureGameV2.Items;
 using System;
 
 namespace AdventureGameV2
@@ -11,6 +11,7 @@ namespace AdventureGameV2
             ItemBase huntItem = ItemGenerator.NewHuntItem();
             Console.WriteLine("You started hunting here and found a " + huntItem.GetName());
             Inventory.AddToInventory(huntItem, huntItem.GetName());
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
         }
@@ -20,6 +21,7 @@ namespace AdventureGameV2
             ItemBase digItem = ItemGenerator.NewDigItem();
             Console.WriteLine("You started digging here and found a " + digItem.GetName());
             Inventory.AddToInventory(digItem, digItem.GetName());
+            Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
         }
