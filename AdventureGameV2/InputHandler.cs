@@ -117,12 +117,26 @@ namespace AdventureGameV2
                             Inventory.inventory.Remove(item);
                             return;
                         }
-                        else
+                    }
+                    Console.WriteLine("You dont have a chest.");
+                    break;
+
+                case "skunk":
+
+                    foreach (ItemBase item in Inventory.inventory)
+                    {
+                        if (item.GetName() == "Skunk")
                         {
-                            Console.WriteLine("You dont have a chest.");
+                            item.Use();
+
+                            Console.ReadLine();
+
+                            Inventory.inventory.Remove(item);
+                            return;
                         }
                     }
-                        break;
+                    Console.WriteLine("You dont have a skunk.");
+                    break;
                 default:
                     Console.WriteLine("You cant use that item.");
                     break;
