@@ -1,9 +1,4 @@
-﻿using AdventureGameV2.Items;
-using Microsoft.Win32;
-using System;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
+﻿using System;
 
 namespace AdventureGameV2
 {
@@ -31,15 +26,15 @@ namespace AdventureGameV2
             //Fuction indentifies the first word and calls functions to indentify and handle the possible second word
             IndentifyFirstWord();
             GetInput();
-            
+
         }
 
         private static void MakeArray()
         {
-            input = string.Join(" ", input.Split(new char[] { ' '}, StringSplitOptions.RemoveEmptyEntries));
+            input = string.Join(" ", input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
             inputArr = input.Split(' ');
         }
-        
+
         private static void IndentifyFirstWord()
         {
             switch (inputArr[0])

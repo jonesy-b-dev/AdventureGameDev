@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdventureGameV2.Items.Special_Items
+﻿namespace AdventureGameV2.Items.Special_Items
 {
     internal class SkunkMeat : ItemBase
     {
