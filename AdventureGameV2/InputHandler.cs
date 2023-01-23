@@ -5,8 +5,8 @@ namespace AdventureGameV2
     //This class askes for input and calls the appropiate functions for it
     internal class InputHandler
     {
-        static string[] inputArr;
-        static string input;
+        static string[] _inputArr;
+        static string _input;
         static Player _player;
 
         internal static void SetPlayer(Player player1)
@@ -19,7 +19,7 @@ namespace AdventureGameV2
             Console.Clear();
             Console.WriteLine("What do you want to do");
 
-            input = Console.ReadLine().ToLower();
+            _input = Console.ReadLine().ToLower();
 
             MakeArray();
 
@@ -31,13 +31,13 @@ namespace AdventureGameV2
 
         private static void MakeArray()
         {
-            input = string.Join(" ", input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-            inputArr = input.Split(' ');
+            _input = string.Join(" ", _input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+            _inputArr = _input.Split(' ');
         }
 
         private static void IndentifyFirstWord()
         {
-            switch (inputArr[0])
+            switch (_inputArr[0])
             {
                 case "move":
                     Move();
@@ -73,7 +73,7 @@ namespace AdventureGameV2
         {
 
             //We know its a move action now so all move actions are here
-            switch (inputArr[1])
+            switch (_inputArr[1])
             {
                 case "north":
                     _player.MovePlayer(1, 0);
@@ -97,7 +97,7 @@ namespace AdventureGameV2
 
         private static void Use()
         {
-            switch (inputArr[1])
+            switch (_inputArr[1])
             {
                 case "chest":
 
