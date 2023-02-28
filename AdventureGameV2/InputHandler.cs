@@ -49,10 +49,20 @@ namespace AdventureGameV2
                     EventHandler.Help();
                     break;
                 case "dig":
-                    EventHandler.Dig();
+                    if (!_player._exploredLocations.Contains(_player._location))
+                    {
+                        EventHandler.Dig();
+                        _player.AddExploredLocation();
+                    }
+                    else
+                    {
+                        Console.WriteLine("You have already explored this location. You can only dig once per location.");
+                        Console.ReadLine();
+                    }
                     break;
                 case "hunt":
                     EventHandler.Hunt();
+                    _player.AddExploredLocation();
                     break;
                 case "inventory":
                     Inventory.PrintItems();

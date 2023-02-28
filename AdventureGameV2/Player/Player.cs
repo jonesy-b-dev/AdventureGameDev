@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AdventureGameV2
 {
     internal class Player
     {
-        private int[] _location = new int[2] { 5, 6 };
+        public int[] _location = new int[2] { 5, 6 };
+        public List<int[]> _exploredLocations = new List<int[]> { };
         public string _name;
+
 
         public Player(string name)
         {
@@ -26,6 +29,15 @@ namespace AdventureGameV2
         public string PrintLocation()
         {
             return "your position is now: Vertical: " + _location[0].ToString() + " Horizontal: " + _location[1].ToString();
+        }
+
+        public void AddExploredLocation()
+        {
+            _exploredLocations.Add(_location);
+            foreach (var item in _location)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

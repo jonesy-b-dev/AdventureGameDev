@@ -14,7 +14,7 @@ namespace AdventureGameV2
             foreach (ItemBase item in inventory)
             {
                 item.PrintDetails();
-                Console.WriteLine();
+                Console.WriteLine();    
             }
             Console.Write("Press enter to continue...");
             Console.ReadKey();
