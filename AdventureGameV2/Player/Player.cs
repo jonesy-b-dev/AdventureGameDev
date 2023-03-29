@@ -34,7 +34,7 @@ namespace AdventureGameV2
         public void AddExploredLocation()
         {
             _exploredLocations.Add(_location);
-            foreach (var item in _location)
+            foreach (  item in _location)
             {
                 Console.WriteLine(item);
             }

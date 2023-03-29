@@ -10,7 +10,6 @@ namespace AdventureGameV2
             Console.WriteLine("Welcome to The Forest!");
             Console.Write("Name your player: ");
             Player player1 = new Player(Console.ReadLine());
-            Player* player2;
 
             Chest chest = new Chest();
             Inventory.inventory.Add(chest);
